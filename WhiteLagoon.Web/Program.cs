@@ -9,6 +9,8 @@ namespace WhiteLagoon.Web
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //Checking Commit
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
