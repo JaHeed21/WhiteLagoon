@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WhiteLagoon.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace WhiteLagoon.Infrastructure.Data
     public class ApplicationDbContext:DbContext { 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
+        public DbSet<Villa> Villas { get; set; }
     }
 
     
