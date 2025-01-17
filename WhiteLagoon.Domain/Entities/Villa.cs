@@ -11,11 +11,11 @@ namespace WhiteLagoon.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public int Sqft { get; set; }
         public int Occupancy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public DateTime Created_Date { get; set; }
+        public DateTime Updated_Date { get; set; }
 
     }
 }
