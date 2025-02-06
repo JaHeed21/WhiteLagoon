@@ -33,7 +33,7 @@ namespace WhiteLagoon.Web.Controllers
             }
             if (obj.Price<=0)
             {
-                ModelState.AddModelError("Price", "Price cannot be Negative. ");
+                ModelState.AddModelError("Price", "Price cannot be Negative or Zero. ");
                 //ModelState.AddModelError("", "Description cannot be Exactly same as Name");
             }
 
@@ -83,18 +83,16 @@ namespace WhiteLagoon.Web.Controllers
          [HttpPost]
         public IActionResult Delete(Villa obj)
          {
-            if (ModelState.IsValid && obj.Id > 0)
-            {
+           
                 Villa? deletevilla = _context.Villas.Where(x => x.Id == obj.Id).FirstOrDefault();
                 if (deletevilla is not null)
                 {
-                    _context.Villas.Remove(obj);
+                    _context.Villas.Remove(deletevilla);
                     _context.SaveChanges();
                     return RedirectToAction("Index", "Villa");
                 }
 
-            }
-            return View("Error", "Home");
+            return View();
 
 
         }
