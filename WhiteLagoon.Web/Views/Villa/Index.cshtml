@@ -1,8 +1,8 @@
 ﻿@model List<WhiteLagoon.Domain.Entities.Villa>
 
 
-<div class="w-100 card border-0 p-4" > 
-    <div class="card-header bg-success bd-gradient ms-lg-0 py-3" >
+<div class="w-100 card border-0 p-4">
+    <div class="card-header bg-success bd-gradient ms-lg-0 py-3">
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="text-white py-2">Villa List</h2>
@@ -39,10 +39,11 @@
                         <td>@obj.Sqft</td>
                         <td>@obj.Occupancy</td>
                         <td>
-                            <div class="w-100 btn btn-group " role="group" >
+                            <div class="w-100 btn btn-group " role="group">
                                 <a asp-controller="Villa" asp-action="Update" asp-route-villaId="@obj.Id"
-                                class="btn btn-success mx-2">
-                                <i class="bi bi-pencil-square"></i> Edit</a>
+                                   class="btn btn-success mx-2">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
                                 <a asp-controller="Villa" asp-action="Delete" asp-route-villaId="@obj.Id"
                                    class="btn btn-danger mx-2">
                                     <i class="bi bi-trash-fill"></i> Delete
@@ -55,5 +56,3 @@
         </table>
     </div>
 </div>
-
-
