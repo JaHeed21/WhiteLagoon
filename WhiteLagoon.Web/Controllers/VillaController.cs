@@ -28,9 +28,15 @@ namespace WhiteLagoon.Web.Controllers
         {
             if (obj.Name == obj.Description)
             {
-                //ModelState.AddModelError("Description", "Description cannot be Exactly same as Name");
-                ModelState.AddModelError("", "Description cannot be Exactly same as Name");
+                ModelState.AddModelError("Description", "Description cannot be Exactly same as Name");
+                //ModelState.AddModelError("", "Description cannot be Exactly same as Name");
             }
+            if (obj.Price<=0)
+            {
+                ModelState.AddModelError("Price", "Price cannot be Negative. ");
+                //ModelState.AddModelError("", "Description cannot be Exactly same as Name");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Villas.Add(obj);
